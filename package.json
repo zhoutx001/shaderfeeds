@@ -1,7 +1,7 @@
 {
-  "name": "vue-instagram-clone-2",
+  "name": "shaderfeeds",
   "version": "1.0.0",
-  "description": "An Instagram clone built with Vue.js and CSSGram. Upload photos, pick filters, and like posts!",
+  "description": "An shader display app built with Vue.js and Threejs",
   "main": "src/main.js",
   "private": true,
   "scripts": {
