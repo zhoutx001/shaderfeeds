@@ -1,48 +1,53 @@
 <template>
-  <div id='app'>
-    <div class='app-phone'>
-      <!-- <div class='phone-header'>
-        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/vue_gram_logo_cp.png' />
-      </div> -->
-      <phone-body
-        :shaderposts='shaderposts'
-        :filters='filters' />
-      <!-- <div class='phone-footer'>
-       <div class='home-cta'>
-        <i class='fas fa-home fa-lg'></i>
-       </div>
-       <div class='upload-cta'>
-        <i class='far fa-plus-square fa-lg'></i>
-       </div>
-      </div> -->
+  <div class='vuegram-post'>
+    <div class='header level'>
+      <div class='level-left'>
+        <figure class='image is-32x32'>
+          <img :src='shaderpost.userImage' />
+        </figure>
+        <span class='username'>{{shaderpost.username}}</span>
+      </div>
+    </div>
+    <!-- <div class='image-container'
+      :class='shaderpost.filter'
+      :style="{ backgroundImage: 'url(' + shaderpost.shaderName + ')' }"
+      @dblclick='like'>
+    </div> -->
+
+    <div id="threeScene">
+<scene
+:currentShape="state.currentShape"
+:currentShader="state.currentShader"  @animate="animateCallback"/>
+    </div>
+
+    <div class='content'>
+      <div class='heart'>
+        <i class='far fa-heart fa-lg'
+           :class="{'fas': this.shaderpost.hasBeenLiked}"
+           @click='like'>
+        </i>
+      </div>
+      <p class='likes'>{{shaderpost.likes}} likes</p>
+      <p class='caption'><span>{{shaderpost.username}}</span> {{shaderpost.caption}}</p>
     </div>
   </div>
 </template>
 
 <script>
-/* eslint-disable */
-import PhoneBody from './components/PhoneBody';
-
-import shaderposts from './data/shaderposts';
-import filters from './data/filters';
-
-
 import * as THREE from 'three';
-import * as Vue from 'vue';
-
-import Scene from './components/Scene';
-
-import basicColor from './shaders/BasicColor';
-
+import Scene from './Scene';
+import basicColor from '../shaders/BasicColor';
+/* eslint-disable */
 export default {
-  name: 'App',
+  name: 'ShaderPost',
+  components: {
+    Scene,
+  },
+  props: {
+    shaderpost: Object,
+  },
   data() {
     return {
-      shaderposts,
-      filters,
-      shaders: [
-        basicColor
-      ],
       shapes: [
         {
           name: 'Cube',
@@ -63,16 +68,14 @@ export default {
       threeVersion: THREE.REVISION
     };
   },
-  components: {
-    Scene,
-    'phone-body': PhoneBody,
-  },
-    methods: {
-    getShaderFromName(name) {
-      return this.shaders.find(x => x.name === name);
+  methods: {
+    like() {
+      this.shaderpost.likes = this.shaderpost.hasBeenLiked ? this.shaderpost.likes - 1 : this.shaderpost.likes + 1;
+      this.shaderpost.hasBeenLiked = !this.shaderpost.hasBeenLiked;
     },
-    setShaderFromName(name) {
-      let shader = this.getShaderFromName(name);
+
+    setShaderFromName() {
+      let shader = basicColor;
       //create the options object to send to ShaderMaterial.
       let shaderObject = {
         vertexShader: shader.vertexShader,
@@ -100,9 +103,7 @@ export default {
       });
       //this.setState({ currentShader: material, currentShaderObject: shader });
     },
-    getShapeFromName(name) {
-      return this.shapes.find(x => x.name === name);
-    },
+
     animateCallback() {
       if (
         Boolean(this.state.currentShaderObject) &&
@@ -114,20 +115,18 @@ export default {
         );
       }
     },
-    getShapeFromName(name) {
-      return this.shapes.find(x => x.name === name);
-    },
+
     changeShape(shapeName) {
       this.state.currentShape = this.getShapeFromName(shapeName);
       //this.setState({ currentShape: this.getShapeFromName(shapeName) });
     }
   },
   mounted() {
-    this.setShaderFromName('Basic Color');
+    this.setShaderFromName();
   }
 };
 </script>
 
-<style lang='scss' src='./styles/app.scss'>
+<style lang='scss' src='../styles/vuegram-post.scss'>
 // Styles from stylesheet
 </style>

@@ -1,25 +1,25 @@
 <template>
   <div class='phone-body'>
     <div class='feed'>
-      <vuegram-post v-for='post in posts'
-        :post='post'
-        :key='posts.indexOf(post)'>
-      </vuegram-post>
+      <shader-post v-for='shaderpost in shaderposts'
+        :shaderpost='shaderpost'
+        :key='shaderposts.indexOf(shaderpost)'>
+      </shader-post>
     </div>
   </div>
 </template>
 
 <script>
-import VuegramPost from './VuegramPost';
+import ShaderPost from './ShaderPost';
 
 export default {
   name: 'PhoneBody',
   props: {
-    posts: Array,
+    shaderposts: Array,
     filters: Array,
   },
   components: {
-    'vuegram-post': VuegramPost,
+    'shader-post': ShaderPost,
   },
 };
 </script>
