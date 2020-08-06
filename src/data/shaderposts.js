@@ -9,7 +9,7 @@ export default [
     filter: 'perpetua',
   },
   {
-    username: 'shader03',
+    username: 'shader02',
     userImage:
       'https://previews.123rf.com/images/samcorp/samcorp1610/samcorp161000109/64631117-techno-abstract-background-glitch-art-style-digital-pixel-noise-computer-screen-signal-error-flow-of.jpg',
     shaderName: 'Basic Color',
