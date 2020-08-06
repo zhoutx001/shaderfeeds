@@ -40,91 +40,12 @@ export default {
     return {
       shaderposts,
       filters,
-      shaders: [
-        basicColor
-      ],
-      shapes: [
-        {
-          name: 'Cube',
-          class: 'BoxGeometry',
-          args: [200, 200, 200, 50, 50, 50]
-        }
-      ],
-      state: {
-        currentShader: {},
-        currentShaderObject: {},
-        currentShape: {
-          name: 'Cube',
-          class: 'BoxGeometry',
-          args: [200, 200, 200, 50, 50, 50]
-        }
-      },
-      clock: new THREE.Clock(),
-      threeVersion: THREE.REVISION
     };
   },
   components: {
     Scene,
     'phone-body': PhoneBody,
   },
-    methods: {
-    getShaderFromName(name) {
-      return this.shaders.find(x => x.name === name);
-    },
-    setShaderFromName(name) {
-      let shader = this.getShaderFromName(name);
-      //create the options object to send to ShaderMaterial.
-      let shaderObject = {
-        vertexShader: shader.vertexShader,
-        fragmentShader: shader.fragmentShader,
-        lights: true
-      };
-      // Add uniforms if present.
-      if ('uniforms' in shader) {
-        // Using UniformUtils will clone the shader files uniforms,
-        shaderObject.uniforms = THREE.UniformsUtils.merge([
-          THREE.UniformsLib['lights'],
-          shader.uniforms
-        ]);
-      }
-      // Set this new material on the mesh.
-      let material = new THREE.ShaderMaterial(shaderObject);
-      // add the original uniforms here so we can loop over them in the Controls, because other uniforms are added that we don't want controls for.
-      material.customUniforms = shader.uniforms;
-
-      //this.state.currentShader = material;
-      //this.state.currentShaderObject = shader;
-      this.state = Object.assign(this.state, {
-        currentShader: material,
-        currentShaderObject: shader
-      });
-      //this.setState({ currentShader: material, currentShaderObject: shader });
-    },
-    getShapeFromName(name) {
-      return this.shapes.find(x => x.name === name);
-    },
-    animateCallback() {
-      if (
-        Boolean(this.state.currentShaderObject) &&
-        Boolean(this.state.currentShaderObject.update)
-      ) {
-        this.state.currentShaderObject.update(
-          this.state.currentShader.uniforms,
-          this.clock
-        );
-      }
-    },
-    getShapeFromName(name) {
-      return this.shapes.find(x => x.name === name);
-    },
-    changeShape(shapeName) {
-      this.state.currentShape = this.getShapeFromName(shapeName);
-      //this.setState({ currentShape: this.getShapeFromName(shapeName) });
-    }
-  },
-  mounted() {
-    this.setShaderFromName('Basic Color');
-  }
 };
 </script>
 

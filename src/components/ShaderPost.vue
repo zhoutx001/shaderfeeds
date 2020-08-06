@@ -8,16 +8,9 @@
         <span class='username'>{{shaderpost.username}}</span>
       </div>
     </div>
-    <!-- <div class='image-container'
-      :class='shaderpost.filter'
-      :style="{ backgroundImage: 'url(' + shaderpost.shaderName + ')' }"
-      @dblclick='like'>
-    </div> -->
-
     <div id="threeScene">
 <scene
-:currentShape="state.currentShape"
-:currentShader="state.currentShader"  @animate="animateCallback"/>
+:shaderName='shaderpost.shaderName'/>
     </div>
 
     <div class='content'>
@@ -34,9 +27,9 @@
 </template>
 
 <script>
-import * as THREE from 'three';
+
 import Scene from './Scene';
-import basicColor from '../shaders/BasicColor';
+// import basicColor from '../shaders/BasicColor';
 /* eslint-disable */
 export default {
   name: 'ShaderPost',
@@ -46,84 +39,12 @@ export default {
   props: {
     shaderpost: Object,
   },
-  data() {
-    return {
-      shapes: [
-        {
-          name: 'Cube',
-          class: 'BoxGeometry',
-          args: [200, 200, 200, 50, 50, 50]
-        }
-      ],
-      state: {
-        currentShader: {},
-        currentShaderObject: {},
-        currentShape: {
-          name: 'Cube',
-          class: 'BoxGeometry',
-          args: [200, 200, 200, 50, 50, 50]
-        }
-      },
-      clock: new THREE.Clock(),
-      threeVersion: THREE.REVISION
-    };
-  },
   methods: {
     like() {
       this.shaderpost.likes = this.shaderpost.hasBeenLiked ? this.shaderpost.likes - 1 : this.shaderpost.likes + 1;
       this.shaderpost.hasBeenLiked = !this.shaderpost.hasBeenLiked;
     },
-
-    setShaderFromName() {
-      let shader = basicColor;
-      //create the options object to send to ShaderMaterial.
-      let shaderObject = {
-        vertexShader: shader.vertexShader,
-        fragmentShader: shader.fragmentShader,
-        lights: true
-      };
-      // Add uniforms if present.
-      if ('uniforms' in shader) {
-        // Using UniformUtils will clone the shader files uniforms,
-        shaderObject.uniforms = THREE.UniformsUtils.merge([
-          THREE.UniformsLib['lights'],
-          shader.uniforms
-        ]);
-      }
-      // Set this new material on the mesh.
-      let material = new THREE.ShaderMaterial(shaderObject);
-      // add the original uniforms here so we can loop over them in the Controls, because other uniforms are added that we don't want controls for.
-      material.customUniforms = shader.uniforms;
-
-      //this.state.currentShader = material;
-      //this.state.currentShaderObject = shader;
-      this.state = Object.assign(this.state, {
-        currentShader: material,
-        currentShaderObject: shader
-      });
-      //this.setState({ currentShader: material, currentShaderObject: shader });
-    },
-
-    animateCallback() {
-      if (
-        Boolean(this.state.currentShaderObject) &&
-        Boolean(this.state.currentShaderObject.update)
-      ) {
-        this.state.currentShaderObject.update(
-          this.state.currentShader.uniforms,
-          this.clock
-        );
-      }
-    },
-
-    changeShape(shapeName) {
-      this.state.currentShape = this.getShapeFromName(shapeName);
-      //this.setState({ currentShape: this.getShapeFromName(shapeName) });
-    }
   },
-  mounted() {
-    this.setShaderFromName();
-  }
 };
 </script>
 
