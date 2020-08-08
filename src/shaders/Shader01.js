@@ -13,7 +13,7 @@ export default {
 }`,
   fragmentShader: `
   #ifdef GL_ES
-  precision mediump float;
+  precision highp float;
   #endif
   uniform vec2 u_resolution;
   uniform vec2 u_mouse;

@@ -50,11 +50,14 @@ export default {
 
       //this.addMesh(this.currentShape);
       this.addMesh();
-      
-      document.getElementById("threeScene").onmousemove=function(e){
+      if(this.shaderName.uniforms.u_mouse){
+      document.onmousemove=function(e){
           this.shaderName.uniforms.u_mouse.value.x = e.offsetX;
           this.shaderName.uniforms.u_mouse.value.y = e.offsetY;
+          console.log(this.shaderName.uniforms.u_mouse.value.x);
       }
+      }
+
       // Add resize listener.
       window.addEventListener('resize', this.sizeRenderer.bind(this), false);
     },
@@ -74,7 +77,7 @@ export default {
     },
     animate() {
 
-      this.shaderName.uniforms.u_time.value+=0.5;
+      this.shaderName.uniforms.u_time.value+=0.012;
       this.renderer.render(this.scene, this.camera);
       requestAnimationFrame(this.animate.bind(this));
     }
@@ -83,7 +86,7 @@ export default {
     this.setupScene();
     this.sizeRenderer();
     this.$refs.scenecontainer.appendChild(this.renderer.domElement);
-    this.animate();
+   this.animate();
   }
 };
 </script>

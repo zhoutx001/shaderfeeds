@@ -13,9 +13,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "sass": "^1.26.10",
+    "three": "^0.89.0",
     "vue": "^2.5.2",
     "vue-dragscroll": "1.4.2",
-    "three": "^0.89.0"
+    "vue-infinite-scroll": "^2.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -68,7 +70,7 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dev-server": "^2.9.1",
+    "webpack-dev-server": "^2.11.5",
     "webpack-merge": "^4.1.0"
   },
   "engines": {

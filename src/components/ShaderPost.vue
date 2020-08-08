@@ -10,7 +10,7 @@
     </div>
     <div id="threeScene">
 <scene
-:shaderName='shaderpost.shaderName'/>
+:shaderName='shaderpost.shaderName' @mousemove="getMouseChange"/>
     </div>
 
     <div class='content'>
@@ -33,16 +33,31 @@ import Scene from './Scene';
 /* eslint-disable */
 export default {
   name: 'ShaderPost',
+  data(){
+   return {
+     mousePos:[
+       {
+         x:0,
+         y:0
+       }
+     ]
+    };
+  },
   components: {
     Scene,
   },
   props: {
     shaderpost: Object,
   },
+
   methods: {
     like() {
       this.shaderpost.likes = this.shaderpost.hasBeenLiked ? this.shaderpost.likes - 1 : this.shaderpost.likes + 1;
       this.shaderpost.hasBeenLiked = !this.shaderpost.hasBeenLiked;
+    },
+    getMouseChange(e){
+      this.mousePos.x=e.offsetX;
+      this.mousePos.y=e.offsetY;
     },
   },
 };
