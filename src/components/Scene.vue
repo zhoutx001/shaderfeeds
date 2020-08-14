@@ -6,8 +6,8 @@
 <script>
 /* eslint-disable */
 import * as THREE from 'three';
-let canvasWidth=400;
-let canvasHeight=400;
+let canvasWidth=375;
+let canvasHeight=375;
 
 export default {
   name: 'Scene',
@@ -52,9 +52,9 @@ export default {
       this.addMesh();
       if(this.shaderName.uniforms.u_mouse){
       document.onmousemove=function(e){
-          this.shaderName.uniforms.u_mouse.value.x = e.offsetX;
-          this.shaderName.uniforms.u_mouse.value.y = e.offsetY;
-          console.log(this.shaderName.uniforms.u_mouse.value.x);
+          // this.shaderName.uniforms.u_mouse.value.x = e.offsetX;
+          // this.shaderName.uniforms.u_mouse.value.y = e.offsetY;
+          // console.log(this.shaderName.uniforms.u_mouse.value.x);
       }
       }
 
