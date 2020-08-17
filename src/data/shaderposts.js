@@ -59,31 +59,19 @@ import shader029 from '../shaders/Shader029';
 import shader030 from '../shaders/Shader030';
 
 import shader031 from '../shaders/Shader031';
-export default [
-  // {
-  //   username: 'shader01',
-  //   userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
-  //   shaderName: shader027,
-  //   likes: 36,
-  //   hasBeenLiked: false,
-  //   caption: 'When you"re ready for summer "18 ☀️',
-  //   filter: 'perpetua',
-  // },
-  {
-    username: 'shader02',
-    userImage:
-      'https://previews.123rf.com/images/samcorp/samcorp1610/samcorp161000109/64631117-techno-abstract-background-glitch-art-style-digital-pixel-noise-computer-screen-signal-error-flow-of.jpg',
-    shaderName: shader028,
-    likes: 49,
-    hasBeenLiked: false,
-    caption: 'Current mood 🐶',
-    filter: 'lofi',
-  },
+import shader032_lv33 from '../shaders/Shader032-LV-pattens-3*3' 
+import shader032_lv55 from '../shaders/Shader032-LV-pattens-5*5' 
+import shader032_lv99 from '../shaders/Shader032-LV-pattens-9*9'
 
+import shader032_lv1 from  '../shaders/Shader032-LV-pattens-01'
+import shader032_lv2 from  '../shaders/Shader032-LV-pattens-02'
+
+export default [
+  
   {
     username: 'shader01',
     userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
-    shaderName: shader029,
+    shaderName: shader032_lv33,
     likes: 36,
     hasBeenLiked: false,
     caption: 'When you"re ready for summer "18 ☀️',
@@ -93,7 +81,27 @@ export default [
     username: 'shader02',
     userImage:
       'https://previews.123rf.com/images/samcorp/samcorp1610/samcorp161000109/64631117-techno-abstract-background-glitch-art-style-digital-pixel-noise-computer-screen-signal-error-flow-of.jpg',
-    shaderName: shader030,
+    shaderName: shader032_lv55,
+    likes: 49,
+    hasBeenLiked: false,
+    caption: 'Current mood 🐶',
+    filter: 'lofi',
+  },
+
+  {
+    username: 'shader01',
+    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+    shaderName: shader032_lv99,
+    likes: 36,
+    hasBeenLiked: false,
+    caption: 'When you"re ready for summer "18 ☀️',
+    filter: 'perpetua',
+  },
+  {
+    username: 'shader02',
+    userImage:
+      'https://previews.123rf.com/images/samcorp/samcorp1610/samcorp161000109/64631117-techno-abstract-background-glitch-art-style-digital-pixel-noise-computer-screen-signal-error-flow-of.jpg',
+    shaderName: shader032_lv1,
     likes: 49,
     hasBeenLiked: false,
     caption: 'Current mood 🐶',
@@ -102,7 +110,7 @@ export default [
   {
     username: 'shader01',
     userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
-    shaderName: shader031,
+    shaderName: shader032_lv2,
     likes: 36,
     hasBeenLiked: false,
     caption: 'When you"re ready for summer "18 ☀️',
@@ -155,25 +163,25 @@ export default [
   //   caption: 'Views from the six...',
   //   filter: 'clarendon',
   // },
-  {
-    username: 'shader01',
-    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
-    shaderName: shader025,
-    likes: 36,
-    hasBeenLiked: false,
-    caption: 'When you"re ready for summer "18 ☀️',
-    filter: 'perpetua',
-  },
-  {
-    username: 'shader02',
-    userImage:
-      'https://previews.123rf.com/images/samcorp/samcorp1610/samcorp161000109/64631117-techno-abstract-background-glitch-art-style-digital-pixel-noise-computer-screen-signal-error-flow-of.jpg',
-    shaderName: shader026,
-    likes: 49,
-    hasBeenLiked: false,
-    caption: 'Current mood 🐶',
-    filter: 'lofi',
-  },
+  // {
+  //   username: 'shader01',
+  //   userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+  //   shaderName: shader025,
+  //   likes: 36,
+  //   hasBeenLiked: false,
+  //   caption: 'When you"re ready for summer "18 ☀️',
+  //   filter: 'perpetua',
+  // },
+  // {
+  //   username: 'shader02',
+  //   userImage:
+  //     'https://previews.123rf.com/images/samcorp/samcorp1610/samcorp161000109/64631117-techno-abstract-background-glitch-art-style-digital-pixel-noise-computer-screen-signal-error-flow-of.jpg',
+  //   shaderName: shader026,
+  //   likes: 49,
+  //   hasBeenLiked: false,
+  //   caption: 'Current mood 🐶',
+  //   filter: 'lofi',
+  // },
   // {
   //   username: 'shader03',
   //   userImage: 'https://as2.ftcdn.net/jpg/01/25/23/29/500_F_125232915_XQnESjxiX1RYJceuXgjpnq34Ilo4F4ed.jpg',
