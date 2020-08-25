@@ -6,8 +6,8 @@
 <script>
 /* eslint-disable */
 import * as THREE from 'three';
-let canvasWidth=375;
-let canvasHeight=375;
+let canvasWidth=window.innerWidth;
+let canvasHeight=window.innerWidth;
 
 export default {
   name: 'Scene',
@@ -77,7 +77,7 @@ export default {
     },
     animate() {
 
-      this.shaderName.uniforms.u_time.value+=0.012;
+      this.shaderName.uniforms.u_time.value+=0.015;
       this.renderer.render(this.scene, this.camera);
       requestAnimationFrame(this.animate.bind(this));
     }

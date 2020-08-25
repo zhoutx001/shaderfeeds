@@ -6,7 +6,9 @@
           <img :src='shaderpost.userImage' />
         </figure>
         <span class='username'>{{shaderpost.username}}</span>
+ <p class='caption'><span>  </span></p>
       </div>
+
     </div>
     <div id="threeScene">
 <scene
@@ -14,14 +16,20 @@
     </div>
 
     <div class='content'>
-      <div class='heart'>
+      <!-- <div class='heart'>
         <i class='far fa-heart fa-lg'
            :class="{'fas': this.shaderpost.hasBeenLiked}"
            @click='like'>
         </i>
-      </div>
-      <p class='likes'>{{shaderpost.likes}} likes</p>
-      <p class='caption'><span>{{shaderpost.username}}</span> {{shaderpost.caption}}</p>
+      </div> -->
+      <!-- <p class='likes'>{{shaderpost.likes}} likes</p> -->
+      <p class='likes'> ⊠⊠ likes</p>
+      
+      <p class='caption'><span>{{shaderpost.username}}</span> {{shaderpost.caption1}}</p>
+       <!-- <p class='caption'><span>{{shaderpost.username}}</span> {{shaderpost.caption2}}</p>
+        <p class='caption'><span>{{shaderpost.username}}</span> {{shaderpost.caption3}}</p> -->
+        <p class='caption'><span> {{shaderpost.commentName01}}</span> {{shaderpost.caption2}}</p>
+        <p class='caption'><span>{{shaderpost.commentName02}}</span> {{shaderpost.caption3}}</p>
     </div>
   </div>
 </template>

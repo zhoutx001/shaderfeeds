@@ -1,4 +1,11 @@
 /* eslint-disable */
+import ds01 from '../shaders/01';
+import ds02 from '../shaders/02';
+import ds03 from '../shaders/03';
+import ds04 from '../shaders/04';
+import ds05 from '../shaders/05';
+
+import ds07 from '../shaders/07';
 import shader01 from '../shaders/Shader01';
 
 import shader02 from '../shaders/Shader02';
@@ -69,53 +76,128 @@ import shader032_lv2 from  '../shaders/Shader032-LV-pattens-02'
 export default [
   
   {
-    username: 'shader01',
+    username: 'DIMENSIONAL SAMPLING',
+    commentName01: '⊠⊠⊠⊠ ⊠⊠⊠',
+    commentName02: '⊠⊠⊠⊠⊠⊠',
+    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+    shaderName: ds01,
+    likes: 36,
+    hasBeenLiked: false,
+    caption1: '⊠⊠⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠⊠⊠',
+    caption2: '⊠⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠⊠⊠⊠⊠',
+    caption3: '⊠⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠⊠⊠ ⊠⊠⊠⊠⊠',
+  },
+  {
+    username: 'DIMENSIONAL SAMPLING',
+    commentName01: '⊠⊠⊠⊠ ⊠⊠⊠',
+    commentName02: '⊠⊠⊠⊠⊠⊠',
+    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+    shaderName: ds02,
+    likes: 36,
+    hasBeenLiked: false,
+    caption1: '⊠⊠⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠ ⊠⊠',
+    caption2: '⊠⊠ ⊠⊠ ⊠⊠⊠ ⊠⊠⊠⊠⊠',
+    caption3: '⊠⊠ ⊠ ⊠⊠ ⊠⊠⊠⊠⊠',
+  },
+  {
+    username: 'DIMENSIONAL SAMPLING',
+    commentName01: '⊠⊠⊠⊠ ⊠⊠⊠',
+    commentName02: '⊠⊠⊠⊠⊠⊠',
+    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+    shaderName: ds03,
+    likes: 36,
+    hasBeenLiked: false,
+    caption1: '⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠⊠⊠',
+    caption2: '⊠⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠⊠⊠⊠⊠',
+    caption3: '⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠ ⊠⊠⊠⊠⊠',
+  },
+  {
+    username: 'DIMENSIONAL SAMPLING',
+    commentName01: '⊠⊠⊠⊠ ⊠⊠⊠',
+    commentName02: '⊠⊠⊠⊠⊠⊠',
+    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+    shaderName: ds04,
+    likes: 36,
+    hasBeenLiked: false,
+    caption1: '⊠⊠⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠ ⊠⊠',
+    caption2: '⊠⊠ ⊠⊠ ⊠⊠⊠ ⊠⊠⊠⊠⊠',
+    caption3: '⊠⊠ ⊠ ⊠⊠ ⊠⊠⊠⊠⊠',
+  },
+  {
+    username: 'DIMENSIONAL SAMPLING',
+    commentName01: '⊠⊠⊠⊠ ⊠⊠⊠',
+    commentName02: '⊠⊠⊠⊠⊠⊠',
+    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+    shaderName: ds05,
+    likes: 36,
+    hasBeenLiked: false,
+    caption1: '⊠⊠⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠ ⊠⊠',
+    caption2: '⊠⊠ ⊠⊠ ⊠⊠⊠ ⊠⊠⊠⊠⊠',
+    caption3: '⊠⊠ ⊠ ⊠⊠ ⊠⊠⊠⊠⊠',
+  },
+  {
+    username: 'DIMENSIONAL SAMPLING',
+    commentName01: '⊠⊠⊠⊠ ⊠⊠⊠',
+    commentName02: '⊠⊠⊠⊠⊠⊠',
     userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
     shaderName: shader032_lv33,
     likes: 36,
     hasBeenLiked: false,
-    caption: 'When you"re ready for summer "18 ☀️',
-    filter: 'perpetua',
+    caption1: '⊠⊠⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠ ⊠⊠',
+    caption2: '⊠⊠ ⊠⊠ ⊠⊠⊠ ⊠⊠⊠⊠⊠',
+    caption3: '⊠⊠ ⊠ ⊠⊠ ⊠⊠⊠⊠⊠',
   },
   {
-    username: 'shader02',
-    userImage:
-      'https://previews.123rf.com/images/samcorp/samcorp1610/samcorp161000109/64631117-techno-abstract-background-glitch-art-style-digital-pixel-noise-computer-screen-signal-error-flow-of.jpg',
-    shaderName: shader032_lv55,
-    likes: 49,
+    username: 'DIMENSIONAL SAMPLING',
+    commentName01: '⊠⊠⊠⊠ ⊠⊠⊠',
+    commentName02: '⊠⊠⊠⊠⊠⊠',
+    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+    shaderName: ds07,
+    likes: 36,
     hasBeenLiked: false,
-    caption: 'Current mood 🐶',
-    filter: 'lofi',
+    caption1: '⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠⊠⊠',
+    caption2: '⊠⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠⊠⊠⊠⊠',
+    caption3: '⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠ ⊠⊠⊠⊠⊠',
   },
+  // {
+  //   username: 'DIMENSIONAL SAMPLING',
+  //   userImage:
+  //     'https://previews.123rf.com/images/samcorp/samcorp1610/samcorp161000109/64631117-techno-abstract-background-glitch-art-style-digital-pixel-noise-computer-screen-signal-error-flow-of.jpg',
+  //   shaderName: shader032_lv55,
+  //   likes: 49,
+  //   hasBeenLiked: false,
+  //   caption: '⊠⊠ ⊠⊠⊠⊠⊠⊠⊠ ⊠⊠',
+  //   filter: 'lofi',
+  // },
 
-  {
-    username: 'shader01',
-    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
-    shaderName: shader032_lv99,
-    likes: 36,
-    hasBeenLiked: false,
-    caption: 'When you"re ready for summer "18 ☀️',
-    filter: 'perpetua',
-  },
-  {
-    username: 'shader02',
-    userImage:
-      'https://previews.123rf.com/images/samcorp/samcorp1610/samcorp161000109/64631117-techno-abstract-background-glitch-art-style-digital-pixel-noise-computer-screen-signal-error-flow-of.jpg',
-    shaderName: shader032_lv1,
-    likes: 49,
-    hasBeenLiked: false,
-    caption: 'Current mood 🐶',
-    filter: 'lofi',
-  },
-  {
-    username: 'shader01',
-    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
-    shaderName: shader032_lv2,
-    likes: 36,
-    hasBeenLiked: false,
-    caption: 'When you"re ready for summer "18 ☀️',
-    filter: 'perpetua',
-  },
+  // {
+  //   username: 'DIMENSIONAL SAMPLING',
+  //   userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+  //   shaderName: shader032_lv99,
+  //   likes: 36,
+  //   hasBeenLiked: false,
+  //   caption: 'When you"re ready for summer "18 ☀️',
+  //   filter: 'perpetua',
+  // },
+  // {
+  //   username: 'DIMENSIONAL SAMPLING',
+  //   userImage:
+  //     'https://previews.123rf.com/images/samcorp/samcorp1610/samcorp161000109/64631117-techno-abstract-background-glitch-art-style-digital-pixel-noise-computer-screen-signal-error-flow-of.jpg',
+  //   shaderName: shader032_lv1,
+  //   likes: 49,
+  //   hasBeenLiked: false,
+  //   caption: 'Current mood 🐶',
+  //   filter: 'lofi',
+  // },
+  // {
+  //   username: 'shader01',
+  //   userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+  //   shaderName: shader032_lv2,
+  //   likes: 36,
+  //   hasBeenLiked: false,
+  //   caption: 'When you"re ready for summer "18 ☀️',
+  //   filter: 'perpetua',
+  // },
   // {
   //   username: 'shader02',
   //   userImage:
