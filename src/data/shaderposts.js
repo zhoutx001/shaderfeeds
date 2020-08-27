@@ -5,7 +5,12 @@ import ds03 from '../shaders/03';
 import ds04 from '../shaders/04';
 import ds05 from '../shaders/05';
 
+import ds06 from '../shaders/06';
 import ds07 from '../shaders/07';
+import ds08 from '../shaders/08';
+import ds09 from '../shaders/09';
+import ds010 from '../shaders/010';
+
 import shader01 from '../shaders/Shader01';
 
 import shader02 from '../shaders/Shader02';
@@ -137,10 +142,10 @@ export default [
   },
   {
     username: 'DIMENSIONAL SAMPLING',
-    commentName01: '⊠⊠⊠⊠ ⊠⊠⊠',
+    commentName01: '⊠⊠⊠⊠⊠',
     commentName02: '⊠⊠⊠⊠⊠⊠',
     userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
-    shaderName: shader032_lv33,
+    shaderName: ds06,
     likes: 36,
     hasBeenLiked: false,
     caption1: '⊠⊠⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠ ⊠⊠',
@@ -149,10 +154,46 @@ export default [
   },
   {
     username: 'DIMENSIONAL SAMPLING',
+    commentName01: '⊠⊠⊠⊠',
+    commentName02: '⊠⊠⊠⊠⊠',
+    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+    shaderName: ds07,
+    likes: 36,
+    hasBeenLiked: false,
+    caption1: '⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠⊠⊠',
+    caption2: '⊠⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠⊠⊠⊠⊠',
+    caption3: '⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠ ⊠⊠⊠⊠⊠',
+  },
+  {
+    username: 'DIMENSIONAL SAMPLING',
     commentName01: '⊠⊠⊠⊠ ⊠⊠⊠',
     commentName02: '⊠⊠⊠⊠⊠⊠',
     userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
-    shaderName: ds07,
+    shaderName: ds08,
+    likes: 36,
+    hasBeenLiked: false,
+    caption1: '⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠⊠⊠',
+    caption2: '⊠⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠⊠⊠⊠⊠',
+    caption3: '⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠ ⊠⊠⊠⊠⊠',
+  },
+  {
+    username: 'DIMENSIONAL SAMPLING',
+    commentName01: '⊠⊠⊠⊠ ⊠⊠⊠',
+    commentName02: '⊠⊠⊠⊠⊠⊠',
+    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+    shaderName: ds09,
+    likes: 36,
+    hasBeenLiked: false,
+    caption1: '⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠⊠⊠',
+    caption2: '⊠⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠⊠⊠⊠⊠',
+    caption3: '⊠ ⊠⊠⊠⊠ ⊠⊠⊠ ⊠ ⊠⊠⊠⊠⊠',
+  },
+  {
+    username: 'DIMENSIONAL SAMPLING',
+    commentName01: '⊠⊠⊠⊠ ⊠⊠⊠',
+    commentName02: '⊠⊠⊠⊠⊠⊠',
+    userImage: 'https://images-na.ssl-images-amazon.com/images/I/51UW1849rJL._AC_SX466_.jpg',
+    shaderName: ds010,
     likes: 36,
     hasBeenLiked: false,
     caption1: '⊠⊠⊠⊠ ⊠⊠ ⊠⊠⊠⊠⊠',

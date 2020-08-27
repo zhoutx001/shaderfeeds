@@ -23,7 +23,7 @@
         </i>
       </div> -->
       <!-- <p class='likes'>{{shaderpost.likes}} likes</p> -->
-      <p class='likes'> ⊠⊠ likes</p>
+      <p class='likes'> ⊠⊠ ⊠⊠⊠⊠⊠</p>
       
       <p class='caption'><span>{{shaderpost.username}}</span> {{shaderpost.caption1}}</p>
        <!-- <p class='caption'><span>{{shaderpost.username}}</span> {{shaderpost.caption2}}</p>

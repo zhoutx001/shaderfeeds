@@ -13,70 +13,74 @@ export default {
 }`,
   fragmentShader: `
   // Author @patriciogv - 2015
-  // Title: Ikeda Data Stream
+  // Title: Ikeda Digits
   
   #ifdef GL_ES
   precision highp float;
   #endif
   
   uniform vec2 u_resolution;
-  uniform vec2 u_mouse;
   uniform float u_time;
   
-  float random (in float x) {
-      return fract(sin(x)*1e4);
+  float random(in float x){ return fract(sin(x)*43758.5453); }
+  // float random(in vec2 st){ return fract(sin(dot(st.xy ,vec2(12.9898,78.233))) * 43758.5453); }
+  float random(vec2 p) { return fract(1e4 * sin(17.0 * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x)))); }
+  
+  float bin(vec2 ipos, float n){
+      float remain = mod(n,33554432.);
+      for(float i = 0.0; i < 25.0; i++){
+          if ( floor(i/3.) == ipos.y && mod(i,3.) == ipos.x ) {
+              return step(1.0,mod(remain,2.));
+          }
+          remain = ceil(remain/2.);
+      }
+      return 0.0;
   }
   
-  float random (in vec2 st) {
-      return fract(sin(dot(st.xy, vec2(12.9898,78.233)))* 43758.5453123);
+  float char(vec2 st, float n){
+      st.x = st.x*2.-0.5;
+      st.y = st.y*1.2-0.1;
+  
+      vec2 grid = vec2(3.,5.);
+  
+      vec2 ipos = floor(st*grid);
+      vec2 fpos = fract(st*grid);
+  
+      n = floor(mod(n,10.));
+      float digit = 0.0;
+      if (n < 1. ) { digit = 31600.; }
+      else if (n < 2. ) { digit = 9363.0; }
+      else if (n < 3. ) { digit = 31184.0; }
+      else if (n < 4. ) { digit = 31208.0; }
+      else if (n < 5. ) { digit = 23525.0; }
+      else if (n < 6. ) { digit = 29672.0; }
+      else if (n < 7. ) { digit = 29680.0; }
+      else if (n < 8. ) { digit = 31013.0; }
+      else if (n < 9. ) { digit = 31728.0; }
+      else if (n < 10. ) { digit = 31717.0; }
+      float pct = bin(ipos, digit);
+  
+      vec2 borders = vec2(0.980,0.980);
+      // borders *= step(0.01,fpos.x) * step(0.01,fpos.y);   // inner
+      borders *= step(-1.144,st)*step(-0.312,1.216-st);            // outer
+  
+      return step(.5,1.0-pct) * borders.x * borders.y;
   }
   
-  float pattern(vec2 st, vec2 v, float t) {
-      vec2 p = floor(st+v);
-      return step(t, random(100.+p*.000001)+random(p.x)*-1.000 );
-  }
-    vec2 rotate2D (vec2 _st, float _angle) {
-        _st -= 0.5;
-        _st =  mat2(cos(_angle),-sin(_angle),
-                    sin(_angle),cos(_angle)) * _st;
-        _st += 0.5;
-        return _st;
-    }
-  void main() {
-      vec2 st = gl_FragCoord.xy/u_resolution.xy;
+  void main(){
+      vec2 st = gl_FragCoord.st/u_resolution.xy;
       st.x *= u_resolution.x/u_resolution.y;
   
-       vec2 grid = vec2(50.0,100.);
-      st *= grid;
-    //st=rotate2D(st,(u_time*0.01));
-      
-      vec2 ipos = floor(st);  // integer
-      vec2 fpos = fract(st);  // fraction
+      float rows = 33.432;
+      vec2 ipos = floor(st*rows);
+      vec2 fpos = fract(st*rows);
   
-      vec2 vel = vec2(u_time*.050*max(grid.x,grid.y)); // time
-      vel *= vec2(-1.0,0.) * random(1.+ipos.x); // direction
+      ipos += vec2(0.280,floor(u_time*21.040*random(ipos.x+1.)));
+      float pct = random(ipos);
+      vec3 color = vec3(char(fpos,100.*pct));
+      color = mix(color,vec3(color.r,0.,0.),step(.99,pct));
   
-      // Assign a random value base on the integer coord
-      vec2 offset = vec2(0.0,0.);
-  
-      vec3 color = vec3(0.);
-      // color.r = pattern(st+offset,vel,0.5+u_mouse.x/u_resolution.x);
-      // color.g = pattern(st,vel,0.5+u_mouse.x/u_resolution.x);
-      // color.b = pattern(st-offset,vel,0.5+u_mouse.x/u_resolution.x);
-      color.r = pattern(st+offset,vel,0.49+fract(u_time)*0.001);
-      color.g = pattern(st,vel,0.5);
-      color.b = pattern(st-offset,vel,0.5);
-  
-      // Margins
-      //color *= step(fpos.x,fpos.y);
-      //color *= step(fpos.x, 1.0);
-     // color *= step(0.3, fpos.x);
-  
-      gl_FragColor = vec4(color,1.0);
-  }
-  
-  
-  
-  
+      gl_FragColor = vec4( color , 1.0);
+  } 
   `,
 };
