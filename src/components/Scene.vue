@@ -77,7 +77,7 @@ export default {
     },
     animate() {
 
-      this.shaderName.uniforms.u_time.value+=0.015;
+      this.shaderName.uniforms.u_time.value+=0.01;
       this.renderer.render(this.scene, this.camera);
       requestAnimationFrame(this.animate.bind(this));
     }

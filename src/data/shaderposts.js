@@ -1,11 +1,11 @@
 /* eslint-disable */
-import ds01 from '../shaders/01';
-import ds02 from '../shaders/02';
-import ds03 from '../shaders/03';
-import ds04 from '../shaders/04';
+import ds01 from '../shaders/02';
+import ds02 from '../shaders/06';
+import ds03 from '../shaders/04';
+import ds04 from '../shaders/03';
 import ds05 from '../shaders/05';
 
-import ds06 from '../shaders/06';
+import ds06 from '../shaders/01';
 import ds07 from '../shaders/07';
 import ds08 from '../shaders/08';
 import ds09 from '../shaders/09';
