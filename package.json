@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "sass": "^1.26.10",
-    "three": "^0.89.0",
+    "three": "^0.125.0",
     "vue": "^2.5.2",
     "vue-dragscroll": "1.4.2",
     "vue-infinite-scroll": "^2.0.2"
